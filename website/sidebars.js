@@ -21,6 +21,11 @@ module.exports = {
       items: ['backend/overview', 'backend/setup', 'backend/general'],
     },
     {
+      type: 'category',
+      label: 'Frontend',
+      items: ['frontend/overview', 'frontend/setup', 'frontend/general'],
+    },
+    {
       type: 'doc',
       id: 'github',
       label: 'Github',

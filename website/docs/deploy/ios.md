@@ -4,7 +4,7 @@ id: ios
 title: Déployer sur l'App Store  
 ---
 
-# Déploiement de l'application GoAway sur l'App Store
+# Déploiement de l'application Odyssea sur l'App Store
 
 ## Pré-requis
 
@@ -64,7 +64,7 @@ title: Déployer sur l'App Store
    		<key>CFBundleDevelopmentRegion</key>
    		<string>$(DEVELOPMENT_LANGUAGE)</string>
    		<key>CFBundleDisplayName</key>
-   		<string>GoAway</string>
+   		<string>Odyssea</string>
    		<key>CFBundleExecutable</key>
    		<string>$(EXECUTABLE_NAME)</string>
    		<key>CFBundleIdentifier</key>
@@ -72,7 +72,7 @@ title: Déployer sur l'App Store
    		<key>CFBundleInfoDictionaryVersion</key>
    		<string>6.0</string>
    		<key>CFBundleName</key>
-   		<string>goaway_app</string>
+   		<string>odyssea_app</string>
    		<key>CFBundlePackageType</key>
    		<string>APPL</string>
    		<key>CFBundleShortVersionString</key>
@@ -211,4 +211,4 @@ title: Déployer sur l'App Store
 
 ## Conclusion
 
-Vous avez maintenant toutes les étapes nécessaires pour déployer votre application "GoAway" sur l'App Store !
+Vous avez maintenant toutes les étapes nécessaires pour déployer votre application "Odyssea" sur l'App Store !

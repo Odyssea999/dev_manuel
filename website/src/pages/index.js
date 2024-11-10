@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Odyssea est une plateforme innovante dédiée à la gestion des voyages. Découvrez comment organiser et gérer vos voyages de manière simple et efficace grâce à nos outils et fonctionnalités avancées.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
