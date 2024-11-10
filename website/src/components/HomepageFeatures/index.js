@@ -4,29 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Planification Simplifiée',
+    title: 'Gestion Simplifiée',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        GoAway simplifie la planification de vos voyages. Créez et organisez vos itinéraires en toute simplicité pour des aventures sans stress.
+        Odyssea simplifie la gestion de votre établissement. Centralisez toutes vos opérations pour une gestion fluide et sans tracas.
       </>
     ),
   },
   {
-    title: 'Conseils et Recommandations',
+    title: 'Optimisation des Ressources',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-       Bénéficiez de conseils et recommandations personnalisés pour chaque destination. Explorez des lieux uniques et découvrez des expériences authentiques.
+        Maximisez l’efficacité de votre établissement grâce à des outils d’optimisation des ressources, des réservations à la gestion du personnel.
       </>
     ),
   },
   {
-    title: 'Connecté et Informé',
+    title: 'Suivi en Temps Réel',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Restez connecté et informé pendant vos voyages grâce à GoAway. Accédez à des informations utiles, telles que la météo locale et les conseils de sécurité, où que vous soyez.
+        Restez informé en temps réel sur toutes les activités de votre établissement. Suivez les performances, les réservations et les besoins en un clin d'œil.
       </>
     ),
   },

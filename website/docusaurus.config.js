@@ -8,20 +8,20 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'GoAway Manuel Développeur',
-  tagline: 'Voyagez différemment',
+  title: 'Odyssea Manuel Développeur',
+  tagline: 'Tout votre établissement au bout des doigts',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://go-away-developper.netlify.app',
+  url: 'https://odyssea-developper.netlify.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'supernovas', // Usually your GitHub org/user name.
-  projectName: 'GoAway', // Usually your repo name.
+  organizationName: 'Odyssea999', // Usually your GitHub org/user name.
+  projectName: 'Odyssea', // Usually your repo name.
 
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
@@ -59,7 +59,7 @@ const config = {
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'GoAway',
+        title: 'Odyssea',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -95,7 +95,7 @@ const config = {
               // },
               {
                 label: 'Discord',
-                href: 'https://discord.gg/pdaFF3c5YF',
+                href: 'https://discord.gg/PnfVjfZs',
               },
               // {
               //   label: 'Twitter',
@@ -107,13 +107,13 @@ const config = {
             title: 'Plus',
             items: [
               {
-                label: 'GitLab',
-                href: 'https://gitlab.com/supernovas99',
+                label: 'Github',
+                href: 'https://github.com/Odyssea999',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} GoAway, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Odyssea, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

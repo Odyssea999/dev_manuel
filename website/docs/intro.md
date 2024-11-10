@@ -2,9 +2,9 @@
 id: intro
 ---
 
-# Documentation générale GoAway
+# Documentation générale Odyssea
 
-Bienvenue dans la documentation de GoAway, un projet polyvalent conçu pour faciliter la planification de voyages. Cette documentation vous fournira toutes les informations nécessaires pour commencer avec le projet, des instructions d'installation à une description détaillée de ses fonctionnalités.
+Bienvenue dans la documentation de Odyssea, une plateforme conçue pour centraliser et simplifier la gestion de votre établissement. Cette documentation vous fournira toutes les informations nécessaires pour commencer avec le projet, des instructions d'installation à une description détaillée de ses fonctionnalités.
 
 ## Table des matières
 
@@ -24,6 +24,11 @@ Découvrez les membres de notre équipe, leurs rôles et leurs coordonnées.
 - [Aperçu](/docs/backend/overview) : Vue d'ensemble de l'API backend et ses fonctionnalités principales.
 - [Setup](/docs/backend/setup) : Instructions pour installer et configurer le backend.
 
+### Frontend
+
+- [Aperçu](/docs/backend/overview) : Vue d'ensemble de l'API backend et ses fonctionnalités principales.
+- [Setup](/docs/backend/setup) : Instructions pour installer et configurer le backend.
+
 ### Deploiement
 
 - [iOS](/docs/deploy/ios) : Guide pour déployer l'application mobile sur iOS.
@@ -31,12 +36,12 @@ Découvrez les membres de notre équipe, leurs rôles et leurs coordonnées.
 
 ## Introduction
 
-GoAway est conçu pour offrir une solution complète pour la planification de voyages, intégrant des fonctionnalités de gestion des utilisateurs, de réservation, de notifications et d'intégration avec des services tiers comme Amadeus et TripAdvisor. Grâce à l'utilisation de technologies modernes comme Flutter pour le frontend mobile et NestJS pour le backend, GoAway garantit une expérience utilisateur fluide et une architecture évolutive.
+Odyssea est conçu pour offrir une solution complète pour la gestion des établissements, intégrant des fonctionnalités pour la gestion des utilisateurs, les réservations, les notifications, et l'intégration avec des services tiers. Grâce à l'utilisation de technologies modernes comme Flutter pour le frontend mobile et NestJS pour le backend, Odyssea garantit une expérience utilisateur fluide et une architecture évolutive.
 
 ## Technologies Utilisées
 
-- **Frontend Mobile :** Développé avec Flutter, utilisant Cubit pour la gestion d'état et GoRouter pour la navigation.
+- **Mobile :** Développé avec Flutter, utilisant Cubit pour la gestion d'état et GoRouter pour la navigation.
+- **Frontend :** Développé en Angular
 - **Backend :** Construit avec NestJS, utilisant PostgreSQL pour la base de données, Redis pour la gestion des sessions, Prometheus pour le monitoring, et Grafana pour la visualisation des métriques.
-- **Services Tiers :** Intégration avec les API Amadeus et TripAdvisor pour enrichir les fonctionnalités de l'application.
 
-Nous espérons que cette documentation vous sera utile pour comprendre et utiliser GoAway efficacement. Pour toute question ou assistance supplémentaire, n'hésitez pas à contacter notre équipe de développement.
+Nous espérons que cette documentation vous sera utile pour comprendre et utiliser Odyssea efficacement. Pour toute question ou assistance supplémentaire, n'hésitez pas à contacter notre équipe de développement.
