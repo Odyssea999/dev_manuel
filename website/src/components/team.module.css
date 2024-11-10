@@ -1,33 +1,78 @@
-/* src/components/Team.module.css */
 .teamContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-  }
-  
-  .teamMember {
-    flex: 1 1 300px;
-    max-width: 100%;
-    text-align: center;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .teamImage {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    object-fit: cover;
-  }
-  
-  .teamInfo {
-    text-align: left;
-  }
-  
-  .teamInfo h3 {
-    margin: 10px 0;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.teamMember {
+  flex: 1 1 30%;
+  max-width: 100%;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.teamMember:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9ff; /* Légère teinte bleutée pour le survol */
+}
+
+.teamMember:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 120, 255, 0.3); /* Effet d'éclairage autour de la carte */
+  z-index: 0;
+}
+
+.teamImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.teamInfo {
+  text-align: left;
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.teamInfo h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.teamInfo p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.teamInfo a {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.teamInfo a:hover {
+  color: #004499;
+}
