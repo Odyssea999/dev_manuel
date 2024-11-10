@@ -1,6 +1,7 @@
 ---
-id: ios
-title: Deployer sur App Store
+
+id: ios  
+title: Déployer sur l'App Store  
 ---
 
 # Déploiement de l'application GoAway sur l'App Store
@@ -203,6 +204,10 @@ title: Deployer sur App Store
 
 2. **Publication manuelle :**
    - Si vous avez choisi la publication manuelle, allez sur App Store Connect et publiez l'application lorsque vous êtes prêt.
+
+## Processus de Publication
+
+**Veuillez noter que la publication de l'application sur l'App Store peut prendre du temps.** Apple effectue une révision minutieuse de l'application, ce qui peut prendre entre **1 et 7 jours** en fonction du volume des soumissions et des vérifications nécessaires. Il est donc recommandé de planifier à l'avance et de suivre régulièrement le statut de la révision dans App Store Connect.
 
 ## Conclusion
 

@@ -22,8 +22,8 @@ module.exports = {
     },
     {
       type: 'doc',
-      id: 'gitlab',
-      label: 'Gitlab',
+      id: 'github',
+      label: 'Github',
     },
     {
       type: 'category',

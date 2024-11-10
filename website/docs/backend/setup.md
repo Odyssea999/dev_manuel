@@ -22,10 +22,10 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 
 1. Ouvrez votre terminal ou invite de commande.
 
-2. Utilisez la commande suivante pour cloner le dépôt ApiGoAway :
+2. Utilisez la commande suivante pour cloner le dépôt API :
 
 ```bash
-git clone https://gitlab.com/supernovas99/apiGoAway.git
+git clone https://github.com/Odyssea999/API.git
 ```
 
 ### Configuration
