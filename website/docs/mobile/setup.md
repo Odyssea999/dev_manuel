@@ -27,7 +27,7 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 2. Utilisez la commande suivante pour cloner le dépôt GoAway :
 
 ```bash 
-    git clone https://gitlab.com/supernovas99/goaway.git
+    git clone https://github.com/Odyssea999/Mobile_app.git
 ```
 
 ### Configuration
@@ -35,7 +35,7 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 1. Changez votre répertoire de travail vers le dépôt cloné :
 
 ```bash
-    cd GoAway 
+    cd Mobile 
  ```
 
 2. Installez les dépendances requises en utilisant :

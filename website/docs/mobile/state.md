@@ -34,7 +34,7 @@ Une fois que vos Cubits sont configurés, vous devez les fournir aux widgets qui
             routerDelegate: router.routerDelegate,
             routeInformationProvider: router.routeInformationProvider,
             routeInformationParser: router.routeInformationParser,
-            title: 'GoAway',
+            title: 'Odyssea',
             theme: ThemeData(
                 brightness: Brightness.dark,
                 scaffoldBackgroundColor: AppColors.backgroundColor,

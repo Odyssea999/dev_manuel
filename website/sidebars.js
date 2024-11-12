@@ -13,7 +13,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Mobile',
-      items: ['mobile/overview', 'mobile/setup', 'mobile/state', 'mobile/modele'],
+      items: ['mobile/overview', 'mobile/setup', 'mobile/state', 'mobile/modele','mobile/internationalisation'],
     },
     {
       type: 'category',
