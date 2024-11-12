@@ -1,30 +1,22 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #28a745; /* Primary green color */
-  --ifm-color-primary-dark: #218838; /* Darker green */
-  --ifm-color-primary-darker: #1e7e34; /* Even darker green */
-  --ifm-color-primary-darkest: #1c7430; /* Darkest green */
-  --ifm-color-primary-light: #34b856; /* Lighter green */
-  --ifm-color-primary-lighter: #3dcf64; /* Even lighter green */
-  --ifm-color-primary-lightest: #6fdc8c; /* Lightest green */
+  --ifm-color-primary: #007bff; /* Primary blue color */
+  --ifm-color-primary-dark: #0069d9; /* Darker blue */
+  --ifm-color-primary-darker: #0056b3; /* Even darker blue */
+  --ifm-color-primary-darkest: #004085; /* Darkest blue */
+  --ifm-color-primary-light: #3399ff; /* Lighter blue */
+  --ifm-color-primary-lighter: #66b3ff; /* Even lighter blue */
+  --ifm-color-primary-lightest: #99ccff; /* Lightest blue */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.07);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #28a745; /* Primary green color */
-  --ifm-color-primary-dark: #218838; /* Darker green */
-  --ifm-color-primary-darker: #1e7e34; /* Even darker green */
-  --ifm-color-primary-darkest:  #1c7430; /* Darkest green */
-  --ifm-color-primary-light: #34b856; /* Lighter green */
-  --ifm-color-primary-lighter: #3dcf64; /* Even lighter green */
-  --ifm-color-primary-lightest: #6fdc8c; /* Lightest green */
+  --ifm-color-primary: #007bff; /* Primary blue color */
+  --ifm-color-primary-dark: #0069d9; /* Darker blue */
+  --ifm-color-primary-darker: #0056b3; /* Even darker blue */
+  --ifm-color-primary-darkest: #004085; /* Darkest blue */
+  --ifm-color-primary-light: #3399ff; /* Lighter blue */
+  --ifm-color-primary-lighter: #66b3ff; /* Even lighter blue */
+  --ifm-color-primary-lightest: #99ccff; /* Lightest blue */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
