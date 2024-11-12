@@ -18,6 +18,9 @@ Découvrez les membres de notre équipe, leurs rôles et leurs coordonnées.
 - [Configuration](/docs/mobile/setup) : Instructions pour configurer l'environnement de développement mobile.
 - [Gestion d'état](/docs/mobile/state) : Utilisation de Cubit pour la gestion d'état.
 - [Modèle](/docs/mobile/modele) : Création et gestion des modèles de données avec sérialisation JSON.
+- [Internationalisation](/docs/mobile/internationalisation) : Gestion des différrentes langues présentes dans l'application
+- [Theme](/docs/mobile/theme) : Gestion du thème dans l'application
+
 
 ### Backend
 
@@ -33,6 +36,7 @@ Découvrez les membres de notre équipe, leurs rôles et leurs coordonnées.
 
 - [iOS](/docs/deploy/ios) : Guide pour déployer l'application mobile sur iOS.
 - [Backend](/docs/deploy/back) : Guide pour déployer le backend de l'application.
+
 
 ## Introduction
 
