@@ -17,39 +17,38 @@ L'application mobile est développée en utilisant [Flutter](https://flutter.dev
 
 Flutter est le framework principal utilisé pour le développement de l'application mobile. Il utilise le langage Dart et fournit une riche collection de widgets personnalisables pour créer des interfaces utilisateur modernes et réactives.
 
-### Firebase
-
-L'application utilise [Firebase](https://firebase.google.com/) pour plusieurs services backend, y compris :
-
-- **Authentication:** Gestion des utilisateurs et des connexions.
-- **Firebase Cloud Messaging (FCM):** Envoi de notifications push aux utilisateurs pour divers événements.
-
 ### API Interne
 
-L'application mobile communique avec une api développé en interne pour la gestion des voayges, des utilisateurs ...
+L'application mobile communique avec une api développé en interne pour la gestion des utilisateurs ...
 
 ### Gestion d'état avec Cubit
 
 Pour la gestion de l'état, l'application utilise [Cubit](https://pub.dev/packages/flutter_cubit), une solution légère pour la gestion d'état basée sur [Bloc](https://bloclibrary.dev/#/). Cubit permet de gérer facilement l'état de l'application de manière réactive et prévisible.
 
+
 ## Architecture
 
-L'application Flutter suit une architecture basée sur les principes de séparation des préoccupations, ce qui la rend maintenable et évolutive. Voici les principaux composants architecturaux :
+L'application Flutter suit les principes de **Clean Architecture**, un modèle qui sépare les différentes préoccupations de l'application pour garantir une structure modulaire, testable et maintenable. Ce modèle permet de maintenir une indépendance entre les différentes parties de l'application, facilitant ainsi l'ajout de nouvelles fonctionnalités et la gestion de la complexité au fur et à mesure de l'évolution du projet.
 
-- **Couche de présentation (UI)**: Cette couche est responsable de l'interface utilisateur de l'application. Elle comprend les widgets, les écrans, les routes, etc.
+### Structure Générale
 
-- **Couche métier (Business Logic)**: Cette couche contient la logique métier de l'application. Elle gère les opérations et les traitements de données nécessaires pour répondre aux fonctionnalités de l'application. 
+L'architecture repose sur une séparation claire entre la logique métier, la gestion de l'état, et les interactions avec les sources de données (comme les API ou les bases de données locales). Cela permet de découpler la logique métier de la présentation et de l'accès aux données, ce qui rend le code plus flexible et plus facile à tester.
 
-- **Couche d'accès aux données (Data Access)**: Cette couche gère l'accès aux données de l'application, telles que les requêtes réseau, la manipulation de la base de données locale, etc.
+- **Présentateur/Widgets** : Gère l'interface utilisateur et l'affichage des données. Les données sont obtenues à partir de la logique métier et sont ensuite affichées via les widgets.
+  
+- **Logique Métier (Cubit/Bloc)** : Gère la logique métier, les transformations de données et les règles d'application. Cette couche est responsable de l’orchestration des actions et de l’appel aux services ou repositories pour effectuer des opérations.
+
+- **Services et Repositories** : Gère l’accès aux données. Les repositories se chargent de récupérer les données à partir de sources externes ou locales, et les services encapsulent les appels aux APIs ou à la base de données.
+
+Cette architecture permet de garantir une **maintenabilité**, une **testabilité**, et une **évolutivité** optimales, tout en facilitant l'intégration de nouvelles fonctionnalités ou la modification des composants existants sans perturber les autres parties de l'application.
+
 
 ## Fonctionnalités
 
 L'application mobile offre plusieurs fonctionnalités essentielles pour les utilisateurs :
 
 - **Authentification et gestion des utilisateurs:** Inscription, connexion, réinitialisation de mot de passe et gestion des profils.
-- **Recherche et réservation de voyages:** Recherche de voyages, consultation des détails et réservation.
-- **Gestion des réservations:** Affichage des réservations passées et actuelles, annulation et modifications.
-- **Notifications:** Réception de notifications push pour les mises à jour et les rappels de voyage.
+
 
 ## UI/UX
 
