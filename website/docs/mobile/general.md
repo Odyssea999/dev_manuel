@@ -31,7 +31,7 @@ Les screens sont des écrans principaux de l'application, chacun correspondant �
 
 ### Création d'un Screen
 
-Pour créer un nouvel écran `NewScreen`, créez un fichier `new_screen.dart` dans le dossier `/screens` et implémentez votre écran en utilisant les widgets et les utilitaires nécessaires.
+Pour créer un nouvel écran `NewScreen`, créez un fichier `new_screen.dart` dans le dossier `/screens` et implémentez votre écran en utilisant les widgets et les utilitaires nécessaires. Le tout étant relié à une fonctionnalité qui sera placé dans `/features`.
 
 ## Utilisation des Widgets
 
@@ -49,7 +49,7 @@ Les widgets sont des éléments réutilisables qui composent l'interface utilisa
 
 ### Création d'un Widget
 
-Pour créer un nouveau widget réutilisable, créez un fichier `custom_widget.dart` dans le dossier `/widgets` et implémentez votre widget selon les besoins de l'application.
+Pour créer un nouveau widget réutilisable, créez un fichier `custom_widget.dart` dans le dossier `/widgets` et implémentez votre widget selon les besoins de l'application.Le tout étant relié à une fonctionnalité qui sera placé dans `/features`.
 
 ## Utilisation du Dossier Utils
 
@@ -57,18 +57,17 @@ Le dossier `utils` contient des classes utilitaires qui fournissent des fonction
 
 ### Exemples de Classes dans le Dossier Utils
 
-- **ApiClient** : Gère les requêtes vers les API externes.
-- **Converters** : Contient des convertisseurs pour le formatage des données.
-- **Theme** : Gère la configuration et l'application du thème de l'application.
+- **Cache Manager** : Gère tout ce qui tout au cache.
+
 
 ### Exemple d'Organisation du Dossier Utils
 
 ```
 /lib
   /utils
-    api_client.dart
-    converters.dart
-    theme.dart
+    cache_manager.dart
+    regex_resources.dart
+    user_singleton.dart
     ...
 ```
 

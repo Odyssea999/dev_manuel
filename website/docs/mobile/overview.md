@@ -19,9 +19,9 @@ Flutter est le framework principal utilisé pour le développement de l'applicat
 
 ### API Interne
 
-L'application mobile communique avec une api développé en interne pour la gestion des utilisateurs ...
+L'application mobile communique avec une API développée en interne pour la gestion des utilisateurs, la gestion des données et autres fonctionnalités spécifiques à l'application.
 
-### Gestion d'état avec Cubit
+### Gestion d'État avec Cubit
 
 Pour la gestion de l'état, l'application utilise [Cubit](https://pub.dev/packages/flutter_cubit), une solution légère pour la gestion d'état basée sur [Bloc](https://bloclibrary.dev/#/). Cubit permet de gérer facilement l'état de l'application de manière réactive et prévisible.
 
@@ -40,15 +40,13 @@ L'architecture repose sur une séparation claire entre la logique métier, la ge
 
 - **Services et Repositories** : Gère l’accès aux données. Les repositories se chargent de récupérer les données à partir de sources externes ou locales, et les services encapsulent les appels aux APIs ou à la base de données.
 
-Cette architecture permet de garantir une **maintenabilité**, une **testabilité**, et une **évolutivité** optimales, tout en facilitant l'intégration de nouvelles fonctionnalités ou la modification des composants existants sans perturber les autres parties de l'application.
-
+Cette architecture garantit une **maintenabilité**, une **testabilité** et une **évolutivité** optimales, tout en facilitant l'intégration de nouvelles fonctionnalités ou la modification des composants existants sans perturber les autres parties de l'application.
 
 ## Fonctionnalités
 
 L'application mobile offre plusieurs fonctionnalités essentielles pour les utilisateurs :
 
-- **Authentification et gestion des utilisateurs:** Inscription, connexion, réinitialisation de mot de passe et gestion des profils.
-
+- **Authentification et gestion des utilisateurs** : Inscription, connexion, réinitialisation de mot de passe et gestion des profils.
 
 ## UI/UX
 
@@ -56,9 +54,10 @@ L'application est conçue pour offrir une expérience utilisateur fluide et intu
 
 ### Navigation
 
-La navigation dans l'application est gérée à l'aide de [GoRouter](https://pub.dev/packages/go_router), permettant une transition fluide entre les écrans et facilitant la gestion de l'historique de navigation. GoRouter offre une API simple pour définir des routes, gérer les transitions et appliquer des redirections.
+La navigation dans l'application est gérée à l'aide de **AutoRoute**, un package Flutter permettant de gérer facilement les routes de l'application. Avec **AutoRoute**, la navigation entre les écrans est simplifiée, offrant une gestion automatique des transitions, de l'historique de navigation et des routes dynamiques. Il permet également de définir des routes imbriquées et des redirections de manière déclarative, ce qui rend le code plus clair et plus maintenable.
+
+**AutoRoute** fournit une approche moderne pour gérer les paramètres de route, les guard rails (vérifications d'accès), et les redirections, tout en conservant une structure de navigation propre et facile à maintenir.
 
 ### Thèmes et Styles
 
-Les styles et thèmes sont définis de manière centralisée pour assurer la cohérence visuelle dans la classe `AppTheme`
-
+Les styles et thèmes sont définis de manière centralisée pour assurer la cohérence visuelle dans la classe `AppTheme`.
