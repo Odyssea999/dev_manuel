@@ -46,15 +46,8 @@ L'API backend offre plusieurs fonctionnalités essentielles pour votre applicati
 Voici quelques endpoints principaux de l'API :
 
 - **/auth**
-  - `POST /register`: Enregistrer un nouvel utilisateur via Keycloak.
-  - `POST /login`: Authentifier un utilisateur et générer un token JWT pour l'accès aux ressources protégées.
-
-- **/users**
-  - `GET /:id`: Récupérer les informations d'un utilisateur par ID.
-  - `PUT /`: Mettre à jour les informations d'un utilisateur.
-
-- **/keycloak**
-  - `POST /token`: Échange des informations d'identification de l'utilisateur contre un token d'accès via Keycloak.
+  - `POST /auth/register`: Enregistrer un nouvel utilisateur via Keycloak.
+  - `POST /auth/login`: Authentifier un utilisateur et générer un token JWT pour l'accès aux ressources protégées.
 
 ## Sécurité
 
@@ -68,9 +61,51 @@ Assurez-vous de configurer correctement l'environnement de Keycloak avec les var
 
 Pour configurer l'API, assurez-vous de créer un fichier `.env` à la racine du projet avec les variables d'environnement suivantes :
 
-- **DATABASE_URL** : URL de la base de données PostgreSQL.
-- **REDIS_URL** : URL du serveur Redis.
-- **KEYCLOAK_URL** : URL du serveur Keycloak pour l'authentification des utilisateurs.
+### Variables Keycloak
+
+- **KEYCLOAK_REALM** :  
+  Le nom du Realm (domaine de sécurité) utilisé dans Keycloak pour regrouper les utilisateurs et les configurations d'accès.  
+
+- **KEYCLOAK_CLIENT_ID** :  
+  L'identifiant du client configuré dans Keycloak pour votre application.  
+
+- **KEYCLOAK_SECRET** :  
+  Le secret client utilisé pour sécuriser la communication entre votre application et Keycloak.  
+
+- **KEYCLOAK_USER** :  
+  L'utilisateur Keycloak utilisé pour effectuer des opérations via l'API de Keycloak.  
+
+- **KEYCLOAK_PASSWORD** :  
+  Le mot de passe de l'utilisateur Keycloak pour l'authentification via l'API.  
+
+- **KEYCLOAK_ADMIN_USER** :  
+  L'utilisateur administrateur Keycloak qui a des privilèges supplémentaires pour gérer les configurations.  
+
+- **KEYCLOAK_ADMIN_PASSWORD** :  
+  Le mot de passe de l'administrateur Keycloak.  
+
+
+### Variables PostgreSQL 
+
+- **POSTGRES_USER** :  
+  Le nom d'utilisateur pour accéder à la base de données PostgreSQL.  
+
+- **POSTGRES_PASSWORD** :  
+  Le mot de passe associé à l'utilisateur PostgreSQL.  
+
+- **POSTGRES_DB** :  
+  Le nom de la base de données PostgreSQL à utiliser.  
+
+- **POSTGRES_URI** :  
+  Utilisée pour fournir directement une chaîne de connexion PostgreSQL.  
+
+### Variables PGAdmin
+
+- **PGADMIN_DEFAULT_EMAIL** :  
+  L'adresse email utilisée pour accéder à l'interface PGAdmin (outil de gestion PostgreSQL).  
+
+- **PGADMIN_DEFAULT_PASSWORD** :  
+  Le mot de passe pour se connecter à PGAdmin.  
 
 ## Conclusion
 

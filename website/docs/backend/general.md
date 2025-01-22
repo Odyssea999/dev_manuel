@@ -3,56 +3,65 @@ id: general
 title: Général
 ---
 
-## Structure Générale du Projet NestJS
-
-### Organisation des Fichiers
-
-L'organisation des fichiers dans un projet NestJS suit généralement une structure conventionnelle. Voici un aperçu de la structure typique :
-
-```
-/src
-  /app.module.ts         # Module racine de l'application
-  /main.ts               # Point d'entrée de l'application
-  /...
-  /auth                 # Répertoire contenant la fonctionalité relatif à l'Authentification ( services,controller , module, entité)
-```
-
 ### Description des Répertoires Principaux
 
-- **/src** : Répertoire racine contenant tout le code source de l'application.
-- **/controllers** : Contrôleurs exposant les endpoints HTTP de l'API.
-- **/modules** : Modules organisant les différentes fonctionnalités de l'application.
-- **/services** : Services fournissant la logique métier et l'accès aux données.
-- **/entities** : Entités représentant les modèles de données persistantes.
-- **/middlewares** : Middlewares pour le traitement des requêtes HTTP.
-- **/filters** : Filtres d'exception pour la gestion des erreurs.
-- **/guards** : Gardes pour la gestion des autorisations et de l'authentification.
-- **/interceptors** : Intercepteurs pour le traitement global des requêtes et réponses.
-- **/tests** : Tests unitaires et d'intégration de l'application.
+L'organisation des répertoires suit les principes de la séparation des responsabilités tout en intégrant les concepts liés à l'architecture Domain-Driven Design (DDD).
 
-### Commandes Utiles
+#### `Domain` Directory  
 
-#### Génération de Composants
+Ce répertoire constitue le noyau de l'application et ne doit dépendre d'aucune dépendance de framework.  
 
-1. **Générer un module :**
-   ```bash
-   nest generate module module-name
-   ```
+- **`Models` ou `Entity`** :  
+  - Contient toutes les entités de base de données ainsi que leurs champs (ex. : table `User`).  
 
-2. **Générer un contrôleur :**
-   ```bash
-   nest generate controller controller-name
-   ```
+- **`Repository`** :  
+  - Contient les classes `interface` pour chaque dépôt lié aux opérations sur la base de données.  
 
-3. **Générer un service :**
-   ```bash
-   nest generate service service-name
-   ```
+---
 
-4. **Générer un middleware :**
-   ```bash
-   nest generate middleware middleware-name
-   ```
+#### `Infrastructure` Directory  
+
+Ce répertoire concerne principalement la gestion de la base de données et contient :  
+
+- **`Dto`** :  
+  - Inclut les objets de transfert de données (DTO), tels que `AuthLoginDto`, `AuthRegisterDto`, `UserReadDto`, etc.  
+
+- **`Repository`** :  
+  - Implémente les interfaces des dépôts définis dans le répertoire `Domain`.  
+
+- **`Mapper`** :  
+  - Contient des classes de mappage entre les DTO et leurs modèles ou entités correspondants.  
+    Exemple : `UserReadDto` mappé à `UserEntity`, avec uniquement les champs nécessaires pour l'utilisateur.  
+
+- **`Config`** :  
+  - Stocke les configurations spécifiques des bases de données, telles que les schémas MongoDB ou la configuration TypeORM.  
+
+---
+
+#### `Application` Directory  
+
+Ce répertoire regroupe la logique métier de l'application :  
+
+- **`Services`** :  
+  - Regroupe les interfaces pour la logique métier, par exemple `AuthService`.  
+
+- **`Common`** :  
+  - Contient des éléments réutilisables par d'autres services ou dans la partie API.  
+
+---
+
+#### `Api` Directory  
+
+Ce répertoire est dédié à l'exposition des API et contient :  
+
+- **`Controller`** :  
+  - Regroupe les classes de contrôleurs qui définissent les routes et points d'accès API.  
+
+---
+
+#### `Socket` Directory  
+
+Ce répertoire regroupe tous les éléments liés à la gestion des sockets.  
 
 ### Pour plus d'informations
 
