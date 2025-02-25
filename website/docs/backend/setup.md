@@ -2,95 +2,114 @@
 id: setup
 title: Configuration
 ---
+# Odyssea Backend
 
-# Configuration de votre espace de travail côté back
+## Configuration de votre espace de travail
 
-## Installation
+Ce guide vous aidera à installer et exécuter l'application back-end d'Odyssea sur votre système.
 
-Suivez ces étapes pour installer et exécuter GoAway sur votre système.
+---
 
-### Prérequis
+## 📌 Prérequis
 
 Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 
-- **Git:** [Télécharger et installer Git](https://git-scm.com/)
-- **Node.js:** [Télécharger Node.js](https://nodejs.org/)
-- **VS Code:** [Télécharger VS Code](https://code.visualstudio.com/download)
-- **Docker:** [Télécharger et installer Docker](https://www.docker.com/get-started)
+- **Git** : [Télécharger et installer Git](https://git-scm.com/)
+- **Node.js** : [Télécharger Node.js](https://nodejs.org/)
+- **VS Code** : [Télécharger VS Code](https://code.visualstudio.com/download)
+- **Docker** : [Télécharger et installer Docker](https://www.docker.com/get-started)
 
-### Cloner le dépôt
+---
 
-1. Ouvrez votre terminal ou invite de commande.
+## 📁 Variables d'environnement
 
-2. Utilisez la commande suivante pour cloner le dépôt API :
+Avant de lancer Docker, configurez les variables d’environnement en créant un fichier `.env` à la racine du projet et en y ajoutant les valeurs suivantes. Ces informations sont disponibles sur le channel credentials de Discord.
+
+```
+DATABASE_URL=postgres://user:password@localhost:15432/dbname
+KEYCLOAK_URL=http://localhost:8080/auth
+KEYCLOAK_REALM=odyssea
+KEYCLOAK_CLIENT_ID=backend
+KEYCLOAK_SECRET=your-client-secret
+DISCORD_BOT_TOKEN=your-discord-bot-token
+DISCORD_CHANNEL_ID=your-discord-channel-id
+```
+
+---
+
+## 🚀 Installation et Exécution
+
+### 1️⃣ Cloner le dépôt
+
+Ouvrez votre terminal et exécutez la commande suivante :
 
 ```bash
-git clone https://github.com/Odyssea999/API.git
+git clone https://github.com/Odyssea999/api.git
 ```
 
-### Construction et Exécution
- 
-1. Lancez docker sur votre machine 
-
-2. Pour construire et exécuter le projet, utilisez la commande suivante :
+Accédez ensuite au dossier du projet :
 
 ```bash
-    docker-compose up --build
- ```
+cd api
+```
 
-Cela vous lancera notre api et les différents containeur qui y sont associés 
-L'api sera accessible à l'url suivante :
+### 2️⃣ Démarrer Docker
+
+Assurez-vous que Docker est lancé sur votre machine.
+
+### 3️⃣ Construire et exécuter le projet
+
+Utilisez la commande suivante pour construire et exécuter les conteneurs Docker :
+
 ```bash
-    http://localhost:3000
-```
-Vous pourrez vous connecter à la base de donnée Postgres accesible à l'url suivante :
-```bash 
-http://localhost:15432
+docker-compose up --build
 ```
 
-Vous pourrez vous connecter à  Keycloack accesible à l'url suivante :
-```bash 
-http://localhost:8080
+L'API sera accessible à l'adresse suivante :
+
+```bash
+http://localhost:3000
 ```
 
-### PostgreSQL : Configuration et Connexion  
+### 4️⃣ Accès aux services associés
 
-1. **Connexion Initiale** :  
-   Utilisez les identifiants admin renseignés dans le fichier `.env` pour vous connecter.  
+- **Base de données PostgreSQL** : [http://localhost:15432](http://localhost:15432)
+- **Keycloak** : [http://localhost:8080](http://localhost:8080)
 
-2. **Création d’un Serveur** :  
-   - Ouvrez l’interface de gestion (par exemple, PGAdmin).  
-   - Dans l’onglet **Général**, donnez un nom au serveur que vous souhaitez créer.  
+---
 
-3. **Récupération de l’Adresse IP du Conteneur PostgreSQL** :  
-   - Exécutez la commande suivante pour afficher les conteneurs en cours d’exécution :  
-     ```bash
-     docker ps
-     ```  
-   - Identifiez l’ID du conteneur PostgreSQL dans la liste affichée.  
-   - Exécutez la commande suivante pour obtenir l’adresse IP du conteneur :  
+## 📂 Configuration PostgreSQL
+
+1. **Connexion Initiale** : Utilisez les identifiants admin du fichier `.env`.
+2. **Création d’un Serveur** :
+   - Ouvrez PGAdmin.
+   - Dans **Général**, donnez un nom au serveur.
+3. **Récupération de l’Adresse IP du Conteneur PostgreSQL** :
+   ```bash
+   docker ps
+   ```
+   - Trouvez l’ID du conteneur PostgreSQL.
+   - Exécutez la commande suivante :
      ```bash
      docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' IdContainerPostgres
-     ```  
+     ```
+4. **Configuration de la Connexion** :
+   - Utilisez l’adresse IP obtenue comme **Nom d’hôte / Adresse**.
+   - Renseignez les identifiants du fichier `.env`.
+5. **Connexion au serveur PostgreSQL**.
 
-4. **Configuration de la Connexion** :  
-   - Une fois l’adresse IP obtenue, renseignez-la dans le champ **Nom d’hôte / Adresse** de l’onglet **Connexion** de votre serveur dans PGAdmin.  
-   - Remplissez également les champs **Identifiant** et **Mot de passe** avec les valeurs correspondantes du fichier `.env`
+---
 
-5. **Finalisation** :  
-   - Enregistrez la configuration et connectez-vous à votre serveur PostgreSQL.
+## 🔐 Configuration Keycloak
 
-### Keycloak
+1. **Connexion Initiale** : Utilisez les identifiants admin du fichier `.env`.
+2. **Création d'un Realm** : Importez `keycloak/realm-export.json`.
+3. **Génération d'un Client Secret** :
+   - Allez dans **Clients** > **Credentials**.
+   - Générez un nouveau `Client Secret`.
+4. **Mise à Jour du `.env`** : Ajoutez le `Client Secret` à `KEYCLOAK_SECRET`.
 
-1. **Connexion Initiale** :  
-   Utilisez les identifiants administrateur définis dans le fichier `.env` pour vous connecter.  
+---
 
-2. **Création d'un Realm** :  
-   Importez le fichier `realm-export` depuis l'API au chemin suivant : `keycloak/realm-export.json`.
+### 🎯 Bon développement ! 🚀
 
-3. **Génération d'un Client Secret** :  
-   - Accédez à la section **Clients** puis à l'onglet **Credentials**.  
-   - Générez un nouveau `Client Secret`.  
-
-4. **Mise à Jour du `.env`** :  
-   - Ajoutez le nouveau `Client Secret` dans la variable `KEYCLOAK_SECRET` de votre fichier `.env`.

@@ -2,12 +2,11 @@
 id: general
 title: Général
 ---
-
-### Description des Répertoires Principaux
+## 📁 Organisation des Répertoires
 
 L'organisation des répertoires suit les principes de la séparation des responsabilités tout en intégrant les concepts liés à l'architecture Domain-Driven Design (DDD).
 
-#### `Domain` Directory  
+### `Domain` Directory  
 
 Ce répertoire constitue le noyau de l'application et ne doit dépendre d'aucune dépendance de framework.  
 
@@ -17,9 +16,7 @@ Ce répertoire constitue le noyau de l'application et ne doit dépendre d'aucune
 - **`Repository`** :  
   - Contient les classes `interface` pour chaque dépôt lié aux opérations sur la base de données.  
 
----
-
-#### `Infrastructure` Directory  
+### `Infrastructure` Directory  
 
 Ce répertoire concerne principalement la gestion de la base de données et contient :  
 
@@ -36,9 +33,7 @@ Ce répertoire concerne principalement la gestion de la base de données et cont
 - **`Config`** :  
   - Stocke les configurations spécifiques des bases de données, telles que les schémas MongoDB ou la configuration TypeORM.  
 
----
-
-#### `Application` Directory  
+### `Application` Directory  
 
 Ce répertoire regroupe la logique métier de l'application :  
 
@@ -48,21 +43,25 @@ Ce répertoire regroupe la logique métier de l'application :
 - **`Common`** :  
   - Contient des éléments réutilisables par d'autres services ou dans la partie API.  
 
----
-
-#### `Api` Directory  
+### `Api` Directory  
 
 Ce répertoire est dédié à l'exposition des API et contient :  
 
 - **`Controller`** :  
   - Regroupe les classes de contrôleurs qui définissent les routes et points d'accès API.  
 
----
-
-#### `Socket` Directory  
+### `Socket` Directory  
 
 Ce répertoire regroupe tous les éléments liés à la gestion des sockets.  
 
-### Pour plus d'informations
+---
+
+### 📖 Pour plus d'informations
 
 Consultez la [documentation officielle de NestJS](https://docs.nestjs.com/) pour des détails sur chaque composant et pour explorer des fonctionnalités avancées du framework.
+
+---
+
+### 🎯 Bon développement ! 🚀
+
+
