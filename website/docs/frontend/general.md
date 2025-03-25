@@ -98,8 +98,6 @@ export const routes: Routes = [
 
 ---
 
-## 🎯 Bon développement ! 🚀
-
 
 ## 📂 Structure Générale
 
