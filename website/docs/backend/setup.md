@@ -18,6 +18,9 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 - **Node.js** : [Télécharger Node.js](https://nodejs.org/)
 - **VS Code** : [Télécharger VS Code](https://code.visualstudio.com/download)
 - **Docker** : [Télécharger et installer Docker](https://www.docker.com/get-started)
+- **OpenSSL** : Vérifiez son installation avec `openssl version`, sinon installez-le avec :
+  - Sur Debian/Ubuntu : `sudo apt install openssl`
+  - Sur macOS : `brew install openssl`
 
 ---
 
@@ -26,13 +29,27 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 Avant de lancer Docker, configurez les variables d’environnement en créant un fichier `.env` à la racine du projet et en y ajoutant les valeurs suivantes. Ces informations sont disponibles sur le channel credentials de Discord.
 
 ```
-DATABASE_URL=postgres://user:password@localhost:15432/dbname
-KEYCLOAK_URL=http://localhost:8080/auth
-KEYCLOAK_REALM=odyssea
-KEYCLOAK_CLIENT_ID=backend
-KEYCLOAK_SECRET=your-client-secret
-DISCORD_BOT_TOKEN=your-discord-bot-token
-DISCORD_CHANNEL_ID=your-discord-channel-id
+# Variables Postgres local 
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
+POSTGRES_URI=
+# Variables PGAdmin
+PGADMIN_DEFAULT_EMAIL=
+PGADMIN_DEFAULT_PASSWORD=
+# Variables Port
+PORT=
+SALT_LENGTH=
+HASH_ALGORITHM=
+REFRESH_TOKEN_SECRET_KEY=
+PRIVATE_KEY_BASE64=
+PUBLIC_KEY_BASE64=
+# Variable Mail
+EMAIL_HOST=
+EMAIL_PORT=
+MAIL=
+MAIL_PASS=
+WEB_URL=
 ```
 
 ---
@@ -74,7 +91,37 @@ http://localhost:3000
 ### 4️⃣ Accès aux services associés
 
 - **Base de données PostgreSQL** : [http://localhost:15432](http://localhost:15432)
-- **Keycloak** : [http://localhost:8080](http://localhost:8080)
+
+---
+
+## 🔑 Génération et Encodage de Clés RSA en Base64
+
+Utilisez OpenSSL pour générer une clé privée de 2048 bits et extraire la clé publique correspondante :
+### Générer une clé privée (2048 bits)
+```sh
+openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
+
+```
+### Extraire la clé publique depuis la clé privée
+```sh
+openssl rsa -in private.pem -pubout -out public.pem
+```
+
+### Encoder les clés en Base64 et les stocker dans le fichier `.env`
+
+```sh
+cat private.pem | base64 > private.pem.b64
+cat public.pem | base64 > public.pem.b64
+```
+
+Ajoutez ces valeurs directement dans votre fichier `.env` :
+
+```
+PRIVATE_KEY_BASE64=<valeur_encodée>
+PUBLIC_KEY_BASE64=<valeur_encodée>
+```
+
+Remplacez `<valeur_encodée>` par les valeurs obtenues après l'encodage.
 
 ---
 
@@ -98,18 +145,4 @@ http://localhost:3000
    - Renseignez les identifiants du fichier `.env`.
 5. **Connexion au serveur PostgreSQL**.
 
----
-
-## 🔐 Configuration Keycloak
-
-1. **Connexion Initiale** : Utilisez les identifiants admin du fichier `.env`.
-2. **Création d'un Realm** : Importez `keycloak/realm-export.json`.
-3. **Génération d'un Client Secret** :
-   - Allez dans **Clients** > **Credentials**.
-   - Générez un nouveau `Client Secret`.
-4. **Mise à Jour du `.env`** : Ajoutez le `Client Secret` à `KEYCLOAK_SECRET`.
-
----
-
 ### 🎯 Bon développement ! 🚀
-
