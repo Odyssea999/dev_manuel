@@ -23,7 +23,6 @@ Le projet suit une **architecture hexagonale**, qui permet de séparer clairemen
 
 L'architecture de l'API repose sur les principes de l'**architecture hexagonale**, ce qui permet une séparation claire entre la logique métier et l'infrastructure technique. Elle se compose des éléments suivants :
 
-- **Modules :** Les modules sont des blocs de construction qui encapsulent des fonctionnalités spécifiques de l'application, comme la gestion des utilisateurs ou des voyages.
   
 - **Contrôleurs :** Les contrôleurs traitent les requêtes HTTP entrantes et délèguent les opérations à des services métiers.
 

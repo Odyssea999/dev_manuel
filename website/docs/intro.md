@@ -12,30 +12,37 @@ Bienvenue dans la documentation de Odyssea, une plateforme conçue pour centrali
 
 Découvrez les membres de notre équipe, leurs rôles et leurs coordonnées.
 
-### Mobile
+<!-- ### Mobile
 
 - [Aperçu](/docs/mobile/overview) : Vue d'ensemble de l'application mobile et ses principales fonctionnalités.
 - [Configuration](/docs/mobile/setup) : Instructions pour configurer l'environnement de développement mobile.
 - [Gestion d'état](/docs/mobile/state) : Utilisation de Cubit pour la gestion d'état.
 - [Modèle](/docs/mobile/modele) : Création et gestion des modèles de données avec sérialisation JSON.
 - [Internationalisation](/docs/mobile/internationalisation) : Gestion des différrentes langues présentes dans l'application
-- [Theme](/docs/mobile/theme) : Gestion du thème dans l'application
+- [Theme](/docs/mobile/theme) : Gestion du thème dans l'application -->
 
 
 ### Backend
 
 - [Aperçu](/docs/backend/overview) : Vue d'ensemble de l'API backend et ses fonctionnalités principales.
-- [Setup](/docs/backend/setup) : Instructions pour installer et configurer le backend.
+- [Configuration](/docs/backend/setup) : Instructions pour installer et configurer le backend.
+- [Général](/docs/backend/general) : Instructions générale sur le projet.
+- [Migration](/docs/backend/migration) : Instructions pour gérer les migrations
 
 ### Frontend
 
-- [Aperçu](/docs/backend/overview) : Vue d'ensemble de l'API backend et ses fonctionnalités principales.
-- [Setup](/docs/backend/setup) : Instructions pour installer et configurer le backend.
+- [Aperçu](/docs/frontend/overview) : Vue d'ensemble de l'API backend et ses fonctionnalités principales.
+- [Configuration](/docs/frontend/setup) : Instructions pour installer et configurer le backend.
+- [Général](/docs/frontend/general) : Instructions générale sur le projet.
+- [Components](/docs/frontend/components) : Instructions sur l'utilisation des composants.
+- [Traduction](/docs/frontend/traduction) : Instructions pour la gestion des traductions.
+- [ApiRoute](/docs/frontend/apiRoutes) : Instructions pour la gestion des endpoints côté front.
 
-### Deploiement
+
+<!-- ### Deploiement
 
 - [iOS](/docs/deploy/ios) : Guide pour déployer l'application mobile sur iOS.
-- [Backend](/docs/deploy/back) : Guide pour déployer le backend de l'application.
+- [Backend](/docs/deploy/back) : Guide pour déployer le backend de l'application. -->
 
 
 ## Introduction
@@ -44,8 +51,8 @@ Odyssea est conçu pour offrir une solution complète pour la gestion des établ
 
 ## Technologies Utilisées
 
-- **Mobile :** Développé avec Flutter, utilisant Cubit pour la gestion d'état et GoRouter pour la navigation.
+- **Mobile :** Développé avec Flutter, utilisant Cubit pour la gestion d'état et GoRouter pour la navigation. **(Prochainement)**
 - **Frontend :** Développé en Angular
-- **Backend :** Construit avec NestJS, utilisant PostgreSQL pour la base de données, Redis pour la gestion des sessions, Prometheus pour le monitoring, et Grafana pour la visualisation des métriques.
+- **Backend :** Construit avec NestJS, utilisant PostgreSQL pour la base de données.
 
 Nous espérons que cette documentation vous sera utile pour comprendre et utiliser Odyssea efficacement. Pour toute question ou assistance supplémentaire, n'hésitez pas à contacter notre équipe de développement.

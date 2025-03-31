@@ -10,18 +10,18 @@ module.exports = {
       id: "team",
       label: "Equipe",
     },
-    {
-      type: "category",
-      label: "Mobile",
-      items: [
-        "mobile/overview",
-        "mobile/setup",
-        "mobile/state",
-        "mobile/modele",
-        "mobile/internationalisation",
-        "mobile/theme",
-      ],
-    },
+    // {
+    //   type: "category",
+    //   label: "Mobile",
+    //   items: [
+    //     "mobile/overview",
+    //     "mobile/setup",
+    //     "mobile/state",
+    //     "mobile/modele",
+    //     "mobile/internationalisation",
+    //     "mobile/theme",
+    //   ],
+    // },
     {
       type: "category",
       label: "Backend",
@@ -44,10 +44,10 @@ module.exports = {
       id: "github",
       label: "Github",
     },
-    {
-      type: "category",
-      label: "Deploiement",
-      items: ["deploy/ios", "deploy/android", "deploy/back"],
-    },
+    // {
+    //   type: "category",
+    //   label: "Deploiement",
+    //   items: ["deploy/ios", "deploy/android", "deploy/back"],
+    // },
   ],
 };

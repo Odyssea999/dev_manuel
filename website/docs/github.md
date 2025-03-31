@@ -19,7 +19,7 @@ GitHub utilise Git pour le contrôle de version, permettant aux développeurs de
 
 - **Cloner le dépôt :**
   ```bash
-  git clone https://github.com/Odyssea999/Mobile_app.git
+  git clone https://github.com/Odyssea999/mobile_app.git
   ```
 - **Créer une nouvelle branche :**
   ```bash
@@ -66,9 +66,9 @@ Pour garantir la clarté et la cohérence des modifications dans le dépôt, il 
   Closes #123
   ```
 
-### Gestion des Issues
+<!-- ### Gestion des Issues
 
-Pour la gestion des issues, nous avons mis en place des templates pour standardiser le processus de création et de suivi des tâches, bugs, et nouvelles fonctionnalités. Lors de la création d'une issue, utilisez le template approprié et assurez-vous de remplir toutes les informations nécessaires. Chaque issue est liée à une branche, et chaque branche est associée à une Pull Request.
+Pour la gestion des issues, nous avons mis en place des templates pour standardiser le processus de création et de suivi des tâches, bugs, et nouvelles fonctionnalités. Lors de la création d'une issue, utilisez le template approprié et assurez-vous de remplir toutes les informations nécessaires. Chaque issue est liée à une branche, et chaque branche est associée à une Pull Request. -->
 
 ### Gestion des Pull Requests
 
