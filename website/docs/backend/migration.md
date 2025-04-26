@@ -5,7 +5,7 @@ title: Migration
 
 # TypeORM Migrations
 
-Cette aprtie explique comment utiliser les commandes de migration TypeORM définies dans le projet.
+Cette partie explique comment utiliser les commandes de migration TypeORM définies dans le projet.
 
 ## Commandes de migration
 
