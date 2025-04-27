@@ -28,6 +28,7 @@ Découvrez les membres de notre équipe, leurs rôles et leurs coordonnées.
 - [Configuration](/docs/backend/setup) : Instructions pour installer et configurer le backend.
 - [Général](/docs/backend/general) : Instructions générale sur le projet.
 - [Migration](/docs/backend/migration) : Instructions pour gérer les migrations
+- [Endpoint](/docs/backend/endpoint) : Instructions pour créer un endpoint
 
 ### Frontend
 

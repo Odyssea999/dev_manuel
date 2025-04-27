@@ -25,7 +25,18 @@ module.exports = {
     {
       type: "category",
       label: "Backend",
-      items: ["backend/overview", "backend/setup", "backend/general", "backend/migration"],
+      items: [
+        "backend/overview",
+        "backend/setup",
+        "backend/general",
+        "backend/migration",
+        "backend/endpoint",
+        "backend/dto",
+        "backend/controller",
+        "backend/service",
+        "backend/repository",
+        "backend/entity"
+      ],
     },
     {
       type: "category",
