@@ -143,7 +143,7 @@ Toutes les routes sont documentées grâce aux décorateurs Swagger :
 - `@ApiBody()` : Décrit le modèle attendu dans le corps de la requête.
 - `@ApiBearerAuth()` : Exige un token Bearer pour certaines routes sécurisées (comme `refresh` ou `verify/token`).
 
-  Pour plus d'[informations](https://docs.nestjs.com/openapi/introduction)
+ 👉 Voir [documentation](https://docs.nestjs.com/openapi/introduction) pour plus de détails.
 ---
 
 ## 4. Gestion des DTO (Data Transfer Object)
@@ -156,22 +156,17 @@ Les **DTO** (Data Transfer Object) sont utilisés pour :
 
 Chaque DTO est **validé** à l'aide de `class-validator` pour garantir la cohérence des données.
 
+👉 Voir [dto.md](/docs/backend/dto.md) pour plus de détails.
 ---
 
-## 5. Validation et gestion des erreurs
-
-Grâce à `class-validator`, NestJS valide automatiquement les données avant qu'elles n'atteignent la logique métier. Si une erreur de validation se produit, une réponse HTTP 400 est retournée avec les détails des erreurs.
-
----
-
-## 6. Sécurisation des routes
+## 5. Sécurisation des routes
 
 - Routes sécurisées avec `JwtAuthGuard` pour les endpoints nécessitant une authentification (par exemple : `refresh`, `verify/token`).
 - Routes publiques comme `login`, `register`, et `confirm-email`.
 
 ---
 
-## 7. Enregistrement du Controller
+## 6. Enregistrement du Controller
 
 Dans un **ControllerModule** :
 

@@ -128,13 +128,3 @@ export class AuthModule {}
 L'utilisation de `@Inject(IAuthService)` dans le controller permet de respecter l'**inversion de dépendances** et de découpler l'implémentation.
 
 ---
-
-## 3. Documentation Swagger
-
-L'endpoint est documenté grâce aux décorateurs **Swagger** :
-
-- `@ApiTags("Auth")` : Regroupe toutes les routes sous la catégorie "Auth" dans Swagger.
-- `@ApiOperation()` : Décrit brièvement l'objectif de l'endpoint.
-- `@ApiResponse()` : Définit les réponses HTTP possibles avec leur description.
-- `@ApiBody()` : Indique le format attendu du corps de la requête (DTO `LoginUserDto`).
-
