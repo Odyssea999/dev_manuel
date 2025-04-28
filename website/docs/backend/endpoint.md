@@ -31,7 +31,7 @@ Le DTO (Data Transfer Object) est utilisé pour :
 
 Les DTO sont essentiels pour garantir que les données reçues par le Controller sont correctement typées et validées.
 
-👉 Voir [dto.md](/docs/backend/dto.md) pour plus de détails.
+👉 Voir [Data Transfer Object (DTO)](/docs/backend/dto.md) pour plus de détails.
 
 ---
 
@@ -46,7 +46,7 @@ Caractéristiques du Controller :
 - Il **ne contient pas** de logique métier
 - Il utilise les DTO en entrée/sortie
 
-👉 Voir [controller.md](/docs/backend/controller.md) pour plus de détails.
+👉 Voir [Controller](/docs/backend/controller.md) pour plus de détails.
 
 ---
 
@@ -60,7 +60,7 @@ Un Service :
 - Est indépendant de l'infrastructure (base de données, HTTP, etc.)
 - Peut être facilement testé en isolation
 
-👉 Voir [service.md](/docs/backend/service.md) pour plus de détails.
+👉 Voir [Service](/docs/backend/service.md) pour plus de détails.
 
 ---
 
@@ -74,7 +74,7 @@ Il doit :
 - Ne contenir **que** des accès aux données (pas de logique métier)
 - Être injecté dans le Service
 
-👉 Voir [repository.md](/docs/backend/repository.md) pour plus de détails.
+👉 Voir [Repository](/docs/backend/repository.md) pour plus de détails.
 
 ---
 
@@ -87,7 +87,7 @@ Elle doit :
 - Être décorée avec les annotations ORM (`@Entity`, `@Column`, etc.)
 - Rester indépendante de la couche application
 
-👉 Voir [entity.md](/docs/backend/entity.md) pour plus de détails.
+👉 Voir [Entity](/docs/backend/entity.md) pour plus de détails.
 
 ---
 
