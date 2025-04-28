@@ -13,15 +13,15 @@ Nous prendrons l'exemple de **l'endpoint `auth/login`** pour illustrer chaque é
 
 # 🔖 Table des matières
 
-- [1. Mise en place du DTO](/docs/backend/dto.md)
-- [2. Mise en place du Controller](/docs/backend/controller.md)
-- [3. Mise en place du Service](/docs/backend/service.md)
-- [4. Mise en place du Repository](/docs/backend/repository.md)
-- [5. Entité et Base de Données](/docs/backend/entity.md)
+- [1. Mise en place du DTO](#dto)
+- [2. Mise en place du Controller](#controller)
+- [3. Mise en place du Service](#service)
+- [4. Mise en place du Repository](#repository)
+- [5. Entité et Base de Données](#entity)
 
 ---
 
-# 1. Mise en place du DTO
+## 1. Mise en place du DTO {#dto}
 
 Le DTO (Data Transfer Object) est utilisé pour :
 
@@ -35,7 +35,7 @@ Les DTO sont essentiels pour garantir que les données reçues par le Controller
 
 ---
 
-# 2. Mise en place du Controller
+## 2. Mise en place du Controller {#controller}
 
 Le Controller reçoit les requêtes HTTP et délègue au Service.
 
@@ -50,7 +50,7 @@ Caractéristiques du Controller :
 
 ---
 
-# 3. Mise en place du Service
+## 3. Mise en place du Service {#service}
 
 Le Service est responsable de la **logique métier**.
 
@@ -64,7 +64,7 @@ Un Service :
 
 ---
 
-# 4. Mise en place du Repository
+## 4. Mise en place du Repository {#repository}
 
 Le Repository gère la communication avec la base de données.
 
@@ -78,7 +78,7 @@ Il doit :
 
 ---
 
-# 5. Entité et Base de Données
+## 5. Entité et Base de Données {#entity}
 
 L'Entité représente un objet persistant en base.
 
@@ -91,7 +91,7 @@ Elle doit :
 
 ---
 
-# 🛠️ Flux global simplifié (Mermaid)
+## 🛠️ Flux global simplifié (Mermaid)
 
 ```mermaid
 sequenceDiagram
