@@ -3,11 +3,11 @@ id: setup
 title: Configuration
 ---
 
-# Odyssea Frontend
+# Odyssea Frontend & Admin
 
 ## Configuration de votre espace de travail
 
-Ce guide vous aidera à installer et exécuter l'application front-end d'Odyssea sur votre système.
+Ce guide vous aide à installer et exécuter **l'application Frontend & Admin** d'Odyssea sur votre système.
 
 ---
 
@@ -15,10 +15,10 @@ Ce guide vous aidera à installer et exécuter l'application front-end d'Odyssea
 
 Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 
-- **Git** : [Télécharger et installer Git](https://git-scm.com/)
-- **Node.js** : [Télécharger Node.js](https://nodejs.org/)
-- **Angular CLI** : Installer avec la commande suivante :
-  
+* **Git** : [Télécharger et installer Git](https://git-scm.com/)
+* **Node.js** : [Télécharger Node.js](https://nodejs.org/)
+* **Angular CLI** : Installer avec la commande suivante :
+
   ```bash
   npm install -g @angular/cli
   ```
@@ -30,25 +30,22 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 
 ### 1️⃣ Cloner le dépôt
 
-Ouvrez votre terminal et exécutez la commande suivante :
-
 ```bash
 git clone https://github.com/Odyssea999/web_app.git
-```
-
-Accédez ensuite au dossier du projet :
-
-```bash
+git clone https://github.com/Odyssea999/admin_web_app.git
 cd web_app
+cd admin_web_app
 ```
+
+---
 
 ### 2️⃣ Installer les dépendances
-
-Installez toutes les dépendances requises en exécutant :
 
 ```bash
 npm install
 ```
+
+---
 
 ### 3️⃣ Lancer l'application
 
