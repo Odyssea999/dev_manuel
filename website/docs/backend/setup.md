@@ -78,44 +78,6 @@ docker network create app_network
 
 ---
 
-## ⚙️ Configuration `docker-compose.yml`
-
-Dans **chaque projet**, vérifie que ton `docker-compose.yml` inclut :
-
-```yaml
-networks:
-  app_network:
-    external: true
-```
-
-Et que chaque service est bien sur ce réseau :
-
-```yaml
-services:
-  api:
-    networks:
-      - app_network
-
-  postgres:
-    networks:
-      - app_network
-
-  postgres_admin:
-    networks:
-      - app_network
-```
-
-Idem pour `api-admin` :
-
-```yaml
-services:
-  api-admin:
-    networks:
-      - app_network
-```
-
----
-
 ## 🚀 Démarrer les projets
 
 ### 1️⃣ Cloner les deux dépôts
@@ -137,8 +99,8 @@ docker-compose up --build
 
 > ⚡ Vérifie que tes logs affichent bien :
 >
-> * `api` connecté à `postgres`
-> * `api-admin` connecté à `postgres`
+> * `api` dispo sur [http://localhost:4200](http://localhost:4200)
+> * `api-admin` dispo sur [http://localhost:4300](http://localhost:4300)
 > * PgAdmin dispo sur [http://localhost:15432](http://localhost:15432)
 
 ---
