@@ -6,7 +6,7 @@ title: Configuration
 
 ## Configuration de votre espace de travail
 
-Ce guide vous aidera à installer et exécuter l'application back-end d'Odyssea sur votre système.
+Ce guide vous aide à installer et exécuter **les deux applications back-end** (`api` et `api-admin`) avec **PostgreSQL**, **PgAdmin**, et un **réseau Docker partagé**.
 
 ---
 
@@ -14,37 +14,46 @@ Ce guide vous aidera à installer et exécuter l'application back-end d'Odyssea 
 
 Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 
-- **Git** : [Télécharger et installer Git](https://git-scm.com/)
-- **Node.js** : [Télécharger Node.js](https://nodejs.org/)
-- **VS Code** : [Télécharger VS Code](https://code.visualstudio.com/download)
-- **Docker** : [Télécharger et installer Docker](https://www.docker.com/get-started)
-- **OpenSSL** : Vérifiez son installation avec `openssl version`, sinon installez-le avec :
-  - Sur Debian/Ubuntu : `sudo apt install openssl`
-  - Sur macOS : `brew install openssl`
+* **Git** : [Installer Git](https://git-scm.com/)
+* **Node.js** : [Installer Node.js](https://nodejs.org/)
+* **VS Code** : [Installer VS Code](https://code.visualstudio.com/download)
+* **Docker & Docker Compose** : [Installer Docker](https://www.docker.com/get-started)
+* **OpenSSL** : Vérifier avec `openssl version` ou installer :
+
+  * Debian/Ubuntu : `sudo apt install openssl`
+  * macOS : `brew install openssl`
 
 ---
 
-## 📁 Variables d'environnement
+## 📂 Variables d'environnement
 
-Avant de lancer Docker, configurez les variables d’environnement en créant un fichier `.env` à la racine du projet et en y ajoutant les valeurs suivantes. Ces informations sont disponibles sur le channel credentials de Discord.
+Chaque projet (`api` et `api-admin`) doit avoir son propre fichier `.env` avec **les mêmes infos de base de données**.
 
-```
-# Variables Postgres local 
+**Exemple pour `api/.env` et `api-admin/.env` :**
+
+```env
+# Variables Postgres
 POSTGRES_USER=
 POSTGRES_PASSWORD=
 POSTGRES_DB=
-POSTGRES_URI=
+POSTGRES_URI=postgres://<user>:<password>@postgres:5432/<db_name>
+
 # Variables PGAdmin
 PGADMIN_DEFAULT_EMAIL=
 PGADMIN_DEFAULT_PASSWORD=
-# Variables Port
-PORT=
+
+# Variables de port
+PORT=3000 # Pour API
+# PORT=3001 # Pour API-Admin
+
+# Autres clés et secrets
 SALT_LENGTH=
 HASH_ALGORITHM=
 REFRESH_TOKEN_SECRET_KEY=
 PRIVATE_KEY_BASE64=
 PUBLIC_KEY_BASE64=
-# Variable Mail
+
+# Mail
 EMAIL_HOST=
 EMAIL_PORT=
 MAIL=
@@ -54,47 +63,87 @@ WEB_URL=
 
 ---
 
-## 🚀 Installation et Exécution
+## 🗂️ Réseau Docker partagé
 
-### 1️⃣ Cloner le dépôt
+> ⚙️ **Un seul réseau pour relier API, API-Admin et Postgres**
 
-Ouvrez votre terminal et exécutez la commande suivante :
+1️⃣ **Créer le réseau partagé** (une seule fois) :
+
+```bash
+docker network create app_network
+```
+
+> ✅ Ce réseau persiste même si tu arrêtes tes conteneurs.
+> Pas besoin de le recréer à chaque fois.
+
+---
+
+## ⚙️ Configuration `docker-compose.yml`
+
+Dans **chaque projet**, vérifie que ton `docker-compose.yml` inclut :
+
+```yaml
+networks:
+  app_network:
+    external: true
+```
+
+Et que chaque service est bien sur ce réseau :
+
+```yaml
+services:
+  api:
+    networks:
+      - app_network
+
+  postgres:
+    networks:
+      - app_network
+
+  postgres_admin:
+    networks:
+      - app_network
+```
+
+Idem pour `api-admin` :
+
+```yaml
+services:
+  api-admin:
+    networks:
+      - app_network
+```
+
+---
+
+## 🚀 Démarrer les projets
+
+### 1️⃣ Cloner les deux dépôts
 
 ```bash
 git clone https://github.com/Odyssea999/api.git
+git clone https://github.com/Odyssea999/api-admin.git
 ```
 
-Accédez ensuite au dossier du projet :
+---
 
-```bash
-cd api
-```
+### 2️⃣ Lancer les conteneurs
 
-### 2️⃣ Démarrer Docker
-
-Assurez-vous que Docker est lancé sur votre machine.
-
-### 3️⃣ Construire et exécuter le projet
-
-Utilisez la commande suivante pour construire et exécuter les conteneurs Docker :
+Dans **chaque dossier** (`api/` et `api-admin/`) :
 
 ```bash
 docker-compose up --build
 ```
 
-L'API sera accessible à l'adresse suivante :
-
-```bash
-http://localhost:3000
-```
-
-### 4️⃣ Accès aux services associés
-
-- **Base de données PostgreSQL** : [http://localhost:15432](http://localhost:15432)
+> ⚡ Vérifie que tes logs affichent bien :
+>
+> * `api` connecté à `postgres`
+> * `api-admin` connecté à `postgres`
+> * PgAdmin dispo sur [http://localhost:15432](http://localhost:15432)
 
 ---
 
-## 🔑 Génération et Encodage de Clés RSA en Base64
+## 🔑 Génération et Encodage des Clés RSA en Base64
 
 Utilisez OpenSSL pour générer une clé privée de 2048 bits et extraire la clé publique correspondante :
 ### Générer une clé privée (2048 bits)
@@ -125,24 +174,40 @@ Remplacez `<valeur_encodée>` par les valeurs obtenues après l'encodage.
 
 ---
 
-## 📂 Configuration PostgreSQL
+## 🗃️ Vérifier la connexion PostgreSQL avec PGAdmin
 
-1. **Connexion Initiale** : Utilisez les identifiants admin du fichier `.env`.
-2. **Création d’un Serveur** :
-   - Ouvrez PGAdmin.
-   - Dans **Général**, donnez un nom au serveur.
-3. **Récupération de l’Adresse IP du Conteneur PostgreSQL** :
+1. Connecte-toi à PgAdmin [http://localhost:15432](http://localhost:15432)
+
+2. Crée un **serveur** :
+
+   * Nom : `odyssea`
+   * Hôte : `postgres`
+   * Port : `5432`
+   * Utilisateur et mot de passe : selon ton `.env`
+
+3. Si besoin, récupère l’IP du conteneur Postgres :
+
    ```bash
    docker ps
+   docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ID_CONTAIN
    ```
-   - Trouvez l’ID du conteneur PostgreSQL.
-   - Exécutez la commande suivante :
-     ```bash
-     docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' IdContainerPostgres
-     ```
-4. **Configuration de la Connexion** :
-   - Utilisez l’adresse IP obtenue comme **Nom d’hôte / Adresse**.
-   - Renseignez les identifiants du fichier `.env`.
-5. **Connexion au serveur PostgreSQL**.
 
-### 🎯 Bon développement ! 🚀
+---
+
+## ✅ Bonnes pratiques
+
+* Toujours utiliser le **même réseau partagé** `app_network`
+* Vérifier `docker network inspect app_network` pour voir tes conteneurs connectés
+* `docker-compose down` arrête les conteneurs mais **ne supprime pas le réseau**
+* Pour tout nettoyer :
+
+  ```bash
+  docker-compose down -v
+  docker network rm app_network
+  ```
+
+---
+
+## 🎯 Bon développement avec Odyssea ! 🚀
+
+Si tu veux je peux te faire un `Makefile` ou un script bash pour lancer les deux projets d’un coup. Dis-moi ! 🔥
