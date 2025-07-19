@@ -99,7 +99,8 @@ docker-compose up --build
 
 > ⚡ Vérifie que tes logs affichent bien :
 >
-> * `api` dispo sur [http://localhost:4200](http://localhost:4200)
+> * `api` dispo sur [http://localhost:4200](http://localhost:4
+> 200)
 > * `api-admin` dispo sur [http://localhost:4300](http://localhost:4300)
 > * PgAdmin dispo sur [http://localhost:15432](http://localhost:15432)
 
