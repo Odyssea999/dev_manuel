@@ -37,6 +37,20 @@ cd web_app
 cd admin_web_app
 ```
 
+## Lib Interne 
+
+1. **Ne jamais commiter le token NPM** dans Git. Il est confidentiel.
+
+2. **Créer un fichier `.npmrc`** à la racine du projet pour permettre l’accès à la librairie privée :
+
+* Récupérez le fichier exemple : `.npmrc.exemple`
+* Remplacez `${NPM_TOKEN}` par la valeur de `NPM_TOKEN` dans votre `.env`.
+* Exemple de `.npmrc` final :
+
+```ini
+//registry.npmjs.org/:_authToken=${NPM_TOKEN}
+```
+---
 ---
 
 ### 2️⃣ Installer les dépendances
